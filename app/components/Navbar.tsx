@@ -1,9 +1,9 @@
 "use client";
 import { RiShoppingBasketFill } from "react-icons/ri";
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Signin from "./Signin";
 
 const navlinks = [
   {
@@ -53,9 +53,7 @@ export default function Navbar() {
         ))}
       </div>
       <div className="flex items-center px-8 lg:px-0 lg:mr-16 md:mr-8">
-        <Button className="font-railey text-2xl text-white hover:text-[#de3c4a]">
-          Sign in
-        </Button>
+        <Signin />
         <RiShoppingBasketFill
           size={30}
           className="text-white hover:text-[#de3c4a]"

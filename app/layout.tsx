@@ -3,6 +3,8 @@ import { Geist, Geist_Mono, Pacifico } from "next/font/google";
 import "./globals.css";
 
 import Image from "next/image";
+import SessionWrapper from "./components/SessionWrapper";
+import { Toaster } from "sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,17 +37,20 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${pacifico} antialiased`}
       >
-        <main className="max-w-7xl mx-auto">
-          <div className="bg-black">
-            <Image
-              src={"/hero6.jpg"}
-              alt="hero"
-              fill
-              className="object-cover h-[20px] -z-10 brightness-60"
-            />
-          </div>
-          {children}
-        </main>
+        <SessionWrapper>
+          <main className="max-w-7xl mx-auto">
+            <div className="bg-black">
+              <Image
+                src={"/hero6.jpg"}
+                alt="hero"
+                fill
+                className="object-cover h-[20px] -z-10 brightness-60"
+              />
+            </div>
+            {children}
+          </main>
+        </SessionWrapper>
+        <Toaster />
       </body>
     </html>
   );
