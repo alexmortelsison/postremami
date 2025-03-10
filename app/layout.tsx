@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Pacifico } from "next/font/google";
 import "./globals.css";
+
+import Image from "next/image";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -10,6 +12,12 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const pacifico = Pacifico({
+  weight: "400", // Pacifico only has weight 400
+  subsets: ["latin"],
+  variable: "--font-pacifico-mono",
 });
 
 export const metadata: Metadata = {
@@ -25,10 +33,23 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${pacifico} antialiased`}
       >
-        {children}
+        <main className="max-w-7xl mx-auto">
+          <div className="bg-black">
+            <Image
+              src={"/hero6.jpg"}
+              alt="hero"
+              fill
+              className="object-cover h-[20px] -z-10 brightness-60"
+            />
+          </div>
+          {children}
+        </main>
       </body>
     </html>
   );
 }
+// [#cc858a];
+// [#d7b19e]
+// [#e8d2ae];
