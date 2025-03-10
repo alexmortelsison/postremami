@@ -27,14 +27,14 @@ const navlinks = [
 export default function Navbar() {
   const pathName = usePathname();
   return (
-    <div className="py-8 flex justify-between md:max-w-7xl md:mx-auto items-center px-8 mr-8 md:mr-0 md:px-0 absolute top-0">
+    <div className="py-8 flex justify-between md:max-w-7xl md:mx-auto items-center px-8 mr-8 md:mr-0 md:px-0 absolute top-0 border-b border-gray-400 w-full">
       <Link href={"/"}>
         <Image
           src={"/logo.png"}
           alt="logo"
           width={2000}
           height={2000}
-          className="w-100 hover:invert"
+          className="w-100"
         />
       </Link>
       <div className="space-x-4 text-white font-railey text-2xl hidden lg:inline-flex flex-1 justify-end pr-8">
