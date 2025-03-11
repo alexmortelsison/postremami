@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Pacifico } from "next/font/google";
 import "./globals.css";
 
-import Image from "next/image";
 import SessionWrapper from "./components/SessionWrapper";
 import { Toaster } from "sonner";
 import ProviderWrapper from "./components/ProviderWrapper";
@@ -42,14 +41,7 @@ export default function RootLayout({
           <ProviderWrapper>
             <main className="max-w-7xl mx-auto">
               <Toaster position="top-center" />
-              <div className="bg-black">
-                <Image
-                  src={"/hero6.jpg"}
-                  alt="hero"
-                  fill
-                  className="object-cover h-[20px] -z-10 brightness-50 w-full"
-                />
-              </div>
+              <div className="bg-black"></div>
               {children}
             </main>
           </ProviderWrapper>

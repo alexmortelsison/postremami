@@ -30,7 +30,7 @@ export default function Navbar() {
   const pathName = usePathname();
   const cartItems = useSelector((state: RootState) => state.cart.items);
   return (
-    <div className="py-8 flex justify-between md:max-w-7xl md:mx-auto items-center px-8 mr-8 md:mr-0 md:px-0 top-0 border-b border-gray-400 w-full fixed">
+    <div className="py-8 flex justify-between md:max-w-7xl md:mx-auto items-center px-8 mr-8 md:mr-0 md:px-0 top-0 border-gray-400 w-full fixed">
       <Link href={"/"}>
         <Image
           src={"/logo.png"}
@@ -57,15 +57,17 @@ export default function Navbar() {
       </div>
       <div className="flex items-center px-8 lg:px-0 lg:mr-16 md:mr-8 relative">
         <Signin />
-        <RiShoppingBasketFill
-          size={30}
-          className="text-white hover:text-[#de3c4a]"
-        />
-        {cartItems.length > 0 && (
-          <span className="bg-red-500 rounded-full text-white px-2 py-1 text-sm absolute -top-0 -right-2">
-            {cartItems.length}
-          </span>
-        )}
+        <Link href={"/cart"}>
+          <RiShoppingBasketFill
+            size={30}
+            className="text-white hover:text-[#de3c4a]"
+          />
+          {cartItems.length > 0 && (
+            <span className="bg-red-500 rounded-full text-white px-2 py-1 text-sm absolute -top-0 -right-2">
+              {cartItems.length}
+            </span>
+          )}
+        </Link>
       </div>
     </div>
   );

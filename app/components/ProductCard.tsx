@@ -1,9 +1,9 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { addToCart } from "@/store/features/cartSlice";
-import Image from "next/image";
+import { RootState } from "@/store/store";
 import Link from "next/link";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toast } from "sonner";
 
 interface ProductProps {
@@ -15,7 +15,13 @@ interface ProductProps {
 }
 
 export default function ProductCard({ product }: { product: ProductProps }) {
+  const isAuthenticated = useSelector(
+    (state: RootState) => state.auth.isAuthenticated
+  );
   const dispatch = useDispatch();
+
+  console.log("isAuthenticated:", isAuthenticated);
+
   const handleAddToCart = () => {
     dispatch(addToCart({ ...product, quantity: 1 }));
     toast.success("Successfully added to cart!");
@@ -24,7 +30,7 @@ export default function ProductCard({ product }: { product: ProductProps }) {
     <div className="border rounded-xl hover:scale-120 duration-400 w-full h-60">
       <div className="grid grid-cols-2">
         <Link href={`/cakes/${product.id}`}>
-          <Image
+          <img
             src={product.image}
             alt="photo"
             width={300}
