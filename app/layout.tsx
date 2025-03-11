@@ -40,14 +40,14 @@ export default function RootLayout({
       >
         <SessionWrapper>
           <ProviderWrapper>
-            <main className="max-w-7xl mx-auto min-h-screen">
+            <main className="max-w-7xl mx-auto">
               <Toaster position="top-center" />
               <div className="bg-black">
                 <Image
                   src={"/hero6.jpg"}
                   alt="hero"
                   fill
-                  className="object-cover h-[20px] -z-10 brightness-60"
+                  className="object-cover h-[20px] -z-10 brightness-50 w-full"
                 />
               </div>
               {children}
