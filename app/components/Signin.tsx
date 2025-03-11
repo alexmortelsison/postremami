@@ -7,14 +7,16 @@ export default function Signin() {
   return (
     <>
       {session ? (
-        <Image
-          src={session.user?.image || ""}
-          alt="avatar"
-          width={80}
-          height={80}
-          className="w-10 rounded-full cursor-pointer"
-          onClick={() => signOut()}
-        />
+        <div>
+          <Image
+            src={session.user?.image || ""}
+            alt="avatar"
+            width={80}
+            height={80}
+            className="w-10 rounded-full cursor-pointer hover:border-2 hover:border-[#de3c4a]"
+            onClick={() => signOut()}
+          />
+        </div>
       ) : (
         <Button
           onClick={() => signIn("google")}
