@@ -1,18 +1,19 @@
 import Navbar from "../components/Navbar";
+import ProductCard from "../components/ProductCard";
+
+interface Product {
+  id: string;
+  name: string;
+  price: number;
+  description: string;
+  image: string;
+}
+
+async function getProducts(): Promise<Product[]> {
+  const res = await fetch(`${process.env.NEXTAUTH_URL}/api/products`);
+  return res.json();
+}
 
 export default function CakePage() {
-  return (
-    <div className="min-h-screen bg-[#de3c4a]/20">
-      <div className="flex justify-center">
-        <Navbar />
-        <div>
-          <p className="mt-60 text-white font-railey text-2xl px-8 md:text-4xl text-center">
-            Choose from Our Most Loved Cupcakes - Handpicked Favorites Just for
-            You!
-          </p>
-        </div>
-      </div>
-      <div></div>;
-    </div>
-  );
+  return <div></div>;
 }

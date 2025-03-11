@@ -5,6 +5,7 @@ import "./globals.css";
 import Image from "next/image";
 import SessionWrapper from "./components/SessionWrapper";
 import { Toaster } from "sonner";
+import ProviderWrapper from "./components/ProviderWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -38,17 +39,19 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${pacifico} antialiased`}
       >
         <SessionWrapper>
-          <main className="max-w-7xl mx-auto">
-            <div className="bg-black">
-              <Image
-                src={"/hero6.jpg"}
-                alt="hero"
-                fill
-                className="object-cover h-[20px] -z-10 brightness-60"
-              />
-            </div>
-            {children}
-          </main>
+          <ProviderWrapper>
+            <main className="max-w-7xl mx-auto">
+              <div className="bg-black">
+                <Image
+                  src={"/hero6.jpg"}
+                  alt="hero"
+                  fill
+                  className="object-cover h-[20px] -z-10 brightness-60"
+                />
+              </div>
+              {children}
+            </main>
+          </ProviderWrapper>
         </SessionWrapper>
         <Toaster />
       </body>
