@@ -34,7 +34,7 @@ export default async function CakePage() {
           Choose from Our Most Loved Cupcakes - Handpicked Favorites Just for
           You!
         </p>
-        <div className="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16 px-16 border-t border-b border-gray-300 py-8 mx-2">
+        <div className="flex-1 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16 px-16 border-t border-b border-gray-300 py-8 mx-2">
           {products.map((product: Product) => (
             <ProductCard key={product.id} product={product} />
           ))}
