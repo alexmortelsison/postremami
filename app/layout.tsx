@@ -41,6 +41,7 @@ export default function RootLayout({
         <SessionWrapper>
           <ProviderWrapper>
             <main className="max-w-7xl mx-auto min-h-screen">
+              <Toaster position="top-center" />
               <div className="bg-black">
                 <Image
                   src={"/hero6.jpg"}
@@ -53,7 +54,6 @@ export default function RootLayout({
             </main>
           </ProviderWrapper>
         </SessionWrapper>
-        <Toaster />
       </body>
     </html>
   );
