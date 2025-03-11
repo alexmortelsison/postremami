@@ -18,14 +18,14 @@ export default function Hero() {
         className="-z-10 object-cover brightness-30"
       />
       <div className="border bg-white/10 rounded-3xl lg:w-[70%] mx-16 lg:mx-0">
-        <div className=" grid lg:grid-cols-2">
+        <div className="grid lg:grid-cols-2">
           <div className="mt-16">
             <Image
               src={"/logo.png"}
               alt="logo"
               width={2000}
               height={2000}
-              className="w-50"
+              className=""
             />
             <p className="flex text-center lg:text-start lg:w-150 w-full lg:pl-12 text-2xl text-white font-railey mt-24 px-8">
               Because you deserve more than just a cupcake.
@@ -44,7 +44,7 @@ export default function Hero() {
               <p className="text-sm">Sign in with Google</p>
             </div>
             <p className="text-gray-400 text-sm mt-40 mb-8">
-              &copy; {year} All rights reserved. Postremami
+              &copy; {year} All rights reserved. Postremami.
             </p>
           </div>
           <div className="w-full">
@@ -53,7 +53,7 @@ export default function Hero() {
               alt="logo"
               width={2000}
               height={2000}
-              className="w-120 object-cover hidden lg:inline-grid"
+              className="h-full object-cover hidden lg:inline-grid"
             />
           </div>
         </div>
