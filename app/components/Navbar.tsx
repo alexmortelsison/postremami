@@ -27,7 +27,7 @@ const navlinks = [
 export default function Navbar() {
   const pathName = usePathname();
   return (
-    <div className="py-8 flex justify-between md:max-w-7xl md:mx-auto items-center px-8 mr-8 md:mr-0 md:px-0 absolute top-0 border-b border-gray-400 w-full">
+    <div className="py-8 flex justify-between md:max-w-7xl md:mx-auto items-center px-8 mr-8 md:mr-0 md:px-0 top-0 border-b border-gray-400 w-full fixed">
       <Link href={"/"}>
         <Image
           src={"/logo.png"}

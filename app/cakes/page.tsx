@@ -14,6 +14,20 @@ async function getProducts(): Promise<Product[]> {
   return res.json();
 }
 
-export default function CakePage() {
-  return <div></div>;
+export default async function CakePage() {
+  const products = await getProducts();
+
+  return (
+    <div className="flex flex-col min-h-screen">
+      {/* Navbar */}
+      <Navbar />
+
+      {/* Product Grid (Pushes Content Down) */}
+      <div className="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-64 mb-24">
+        {products.map((product: Product) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
+      </div>
+    </div>
+  );
 }

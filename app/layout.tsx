@@ -40,7 +40,7 @@ export default function RootLayout({
       >
         <SessionWrapper>
           <ProviderWrapper>
-            <main className="max-w-7xl mx-auto">
+            <main className="max-w-7xl mx-auto min-h-screen">
               <div className="bg-black">
                 <Image
                   src={"/hero6.jpg"}
